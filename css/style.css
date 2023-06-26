@@ -263,6 +263,10 @@ body .infoBox .text.red {
   color: red;
 }
 
+body .infoBox .text.green {
+  color: #31aa75;
+}
+
 body .infoBox .text.center {
   font-weight: bold;
   text-align: center;

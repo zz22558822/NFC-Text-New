@@ -2,25 +2,6 @@
 @import './mixin/RWD';
 
 
-// // V1
-// body {
-//   font-family: Arial, sans-serif;
-//   text-align: center;
-//   padding: 50px;
-
-//   h1 {
-//     margin-bottom: 20px;
-//   }
-
-//   .status {
-//     font-size: 24px;
-//     margin-bottom: 10px;
-//     color: #333;
-//   }
-// }
-
-// V2
-
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -45,7 +26,6 @@ body {
     margin-bottom: 30px;
     p{
       font-size: 20px;
-      // font-weight: bold;
       margin-right: 10px;
     }
     .SN,.Num{
@@ -80,6 +60,9 @@ body {
       text-align: left;
       &.red{
         color: red;
+      }
+      &.green{
+        color: #31aa75;
       }
       &.center{
         font-weight: bold;
