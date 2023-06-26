@@ -41,7 +41,7 @@ function startNfcScan() {
 		for (const record of records) {
 			console.log(record);
 			console.log(record.data);
-			addText(`資料: ${record.data==null?'資料不存在或格式錯誤':record.data}`);
+			addText(`> 資料: (${record.data==null?'資料不存在或格式錯誤':record.data})`,'bold');
 
 		}
 
