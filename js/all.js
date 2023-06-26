@@ -1,4 +1,6 @@
 const infoBox = document.querySelector('.infoBox');
+const SN = document.querySelector("#SN").value;
+const Num = document.querySelector("#Num").value
 
 // 新增文字資訊框調用
 function addText(event, className) {
@@ -34,11 +36,13 @@ function startNfcScan() {
       const serialNumber = event.serialNumber;
       console.log(`> 序號: ${serialNumber}`); // 輸出訊息，顯示序列號
       addText(`> 序號: ${serialNumber}`, 'bold');
+	  SN = serialNumber
 
       // 顯示記錄數量
       const numberOfRecords = event.message.records.length;
       console.log(`> 記錄: (${numberOfRecords})`); // 輸出訊息，顯示記錄數量
       addText(`> 記錄: (${numberOfRecords})`, 'bold');
+	  Num = numberOfRecords
     });
 
     // 在掃描開始前更新狀態元素為「掃描中」
