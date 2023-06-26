@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <title>NFC 狀態測試</title>
+
+    <link rel="icon" href="images/Logo.svg">
+
+    <meta name="author" content="chek">
+    <meta name="copyright" content="chek">
+    <meta name="generator" content="chek">
+    <meta name="description" content="NFC">
+    <meta name="keywords" content="NFC,Web NFC,NFC Test,Test">
+
+    <meta property="og:title" content="NFC 狀態測試">
+    <meta property="og:description" content="狀態測試">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:image" href="images/Logo.svg">
+    <link href="images/Logo.svg" rel="apple-touch-icon" />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+
+  <body>
+
+    <h1>NFC 狀態</h1>
+
+    <div class="status" id="status"></div>
+
+    <div class="info">
+      <div class="SN">
+        <p>序號: </p>
+        <input type="text" id="SN" disabled>
+        <i class="fa fa-clone" aria-hidden="true"></i>
+      </div>
+      <div class="Num">
+        <p>紀錄: </p>
+        <input type="text" id="Num" disabled>
+        <i class="fa fa-clone" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <button id="scanButton" onclick="startNfcScan()">
+      <i class="fas fa-search"></i> 開啟 NFC 掃描
+    </button>
+
+    <div class="infoBox"></div>
+
+
+
+
+    <!--JS載入-->
+    <script src="js/53fb2c75c6.js" crossorigin="anonymous"></script>
+    <script src="js/all.js"></script>
+
+  </body>
+</html>
