@@ -105,8 +105,13 @@ function startNfcScan() {
     SN.value = ''; // 清空序號框的值
     Num.value = ''; // 清空資料框的值
 
+	// 移除已有的讀取事件監聽器
+    if (reader !== null) {
+      reader.removeEventListener('reading', handleNfcReading);
+    }
+
     // 建立 NDEFReader 物件
-    const reader = new NDEFReader();
+    reader = new NDEFReader();
 
     reader.addEventListener('reading', event => {
       // 取得訊息中的記錄
@@ -132,7 +137,12 @@ function startNfcScan() {
       addText(`> 記錄: (${numberOfRecords})`, 'bold');
       Num.value = numberOfRecords;
 
-      statusElement.innerHTML = '<i class="fas fa-check"></i> NFC 狀態：已讀取'; // 讀取完成後的狀態：已讀取
+      statusElement.innerHTML = '<i class="fas fa-check green"></i> NFC 狀態：已讀取'; // 讀取完成後的狀態：已讀取
+
+	  // 倒數三秒後顯示回請掃描
+	  setTimeout(() => {
+		statusElement.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 請掃描 NFC';
+	  }, 1500);
     });
 
     reader.scan().catch(error => {
