@@ -11,7 +11,7 @@ function addText(event, className) {
   infoBox.appendChild(newDiv);
 }
 
-function startNfcScan() {
+async function startNfcScan() {
   console.log("掃描按鈕觸發"); // 輸出訊息，表示使用者按下了掃描按鈕
   addText(' >>> 掃描按鈕觸發 <<<', 'red center');
 
@@ -57,15 +57,17 @@ function startNfcScan() {
     // 在掃描開始前更新狀態元素為「掃描中」
     statusElement.innerHTML = '<i class="fas fa-spinner fa-spin"></i> NFC 狀態：掃描中';
 
-    reader.scan().then(() => {
+    try {
+      await reader.scan();
+
       // 掃描完成後更新狀態元素為「已讀取」
       statusElement.innerHTML = '<i class="fas fa-check green"></i> NFC 狀態：已讀取';
-    }).catch(error => {
+    } catch (error) {
       console.error('掃描 NFC 錯誤: ', error);
       addText(`掃描 NFC 錯誤: (${error})`, 'bold');
       // 若發生錯誤，更新狀態元素為「掃描失敗」
       statusElement.innerHTML = '<i class="fas fa-times red"></i> NFC 狀態：掃描失敗';
-    });
+    }
   } else {
     // 若瀏覽器不支援 Web NFC API，輸出錯誤訊息並更新狀態元素內容為「NFC 功能不支援」
     console.error('此瀏覽器不支持 NFC。');
