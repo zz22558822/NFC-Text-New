@@ -89,6 +89,6 @@ function copyValue(inputId) {
 	  input.select();
 	  input.setSelectionRange(0, 99999);
 	  document.execCommand('copy');
-	  addText(`已複製:  ${input.value}`,green);
+	  addText(`已複製:  ${input.value}`,'green');
 	}
   }
